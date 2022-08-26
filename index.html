@@ -27,6 +27,25 @@
         <!--sidebox-->
         <div class="sidebox wrapper col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
 
+            <div class="box1 animation">
+                <img class="d-inline-block pt-3" src="assets/Document.gif" alt="Recycle">
+            </div>
+
+            <!--bubbles-->
+            <section class="sticky">
+                <div class="bubbles">
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                </div>
+            </section>
 
         </div>
         <!--sidebar-->
@@ -35,33 +54,21 @@
             <div class="row">
                 <div class="col-sm-12 col-md-1 col-lg-2 col-xl-2 col-xxl-2"></div>
                 <div class="col-sm-12 col-md-10 col-lg-8 col-xl-8 col-xxl-8">
-                    <!--bubbles-->
-                    <section class="sticky">
-                        <div class="bubbles">
-                            <div class="bubble"></div>
-                            <div class="bubble"></div>
-                            <div class="bubble"></div>
-                            <div class="bubble"></div>
-                            <div class="bubble"></div>
-                            <div class="bubble"></div>
-                            <div class="bubble"></div>
-                            <div class="bubble"></div>
-                            <div class="bubble"></div>
-                            <div class="bubble"></div>
-                        </div>
-                    </section>
+
 
                     <div id="login" class="mt-5 container loginbox float-start">
                         <div class="row-vertical">
                             <div class="col">
-                                <h1 class="title mb-5">E-ATIK</h1>
+                                <div class="title mb-4 fw-bold">E-Atık</div>
+                                <h3 class="subtitle mb-5">Sisteme Giriş</h3>
                             </div>
 
                             <div class="col">
                                 <div class="form-floating mb-3">
                                     <input type="email" class="form-control" id="floatingInput"
                                         placeholder="name@example.com">
-                                    <label for="floatingInput"><i class="fa-solid fa-envelope"></i> Email address</label>
+                                    <label for="floatingInput"><i class="fa-solid fa-envelope me-2"></i>Email
+                                        adresi</label>
                                 </div>
                             </div>
 
@@ -69,13 +76,14 @@
                                 <div class="form-floating mb-4">
                                     <input type="password" class="form-control" id="floatingPassword"
                                         placeholder="Password">
-                                    <label for="floatingPassword"><i class="fa-solid fa-lock"></i> Password</label>
+                                    <label for="floatingPassword"><i class="fa-solid fa-lock me-2"></i>Şİfre</label>
                                 </div>
                             </div>
 
                             <div class="col">
                                 <p class="mb-5">
-                                    <a href="#">Şifrenizi mi unuttunuz?</a>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#forgot">Şifrenizi mi
+                                        unuttunuz?</a>
                                 </p>
                             </div>
 
@@ -84,14 +92,10 @@
                             </div>
 
                             <div class="col">
-                                <p class="mb-5">
-                                    <a href="#">Kayıt Ol</a>
-                                </p>
-                            </div>
-
-                            <div class="col">
-                                <img src="assets/Haydesoft_Logo_04.png" alt="" style="width: 235px;
-                                height: 51px;">
+                                <div class="logo">
+                                    <img src="assets/Haydesoft_Logo_04.png" alt="" style="width: 235px;
+                                    height: 51px;">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -104,6 +108,79 @@
         </div>
 
     </div>
+
+    <!--Modal-->
+    <div class="modal fade" id="forgot" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Şifreyi Sıfırla</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-floating mb-4">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput" class="floatinglbl"><i class="fa-solid fa-envelope"></i>
+                            E-mail Adresi</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn custom rounded" data-bs-dismiss="modal">Kapat</button>
+                    <button id="kt_docs_toast_stack_button" type="button" class="btn custom rounded">Sıfırlama mailini
+                        gönder</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--toast-->
+    <!--Toast notf beginning-->
+    <div id="kt_docs_toast_stack_container" class="toast-container position-fixed top-0 end-0 p-3 z-index-3">
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-kt-docs-toast="stack">
+            <div class="toast-header">
+                <span class="svg-icon svg-icon-2 svg-icon-primary me-3">
+                    <div class="spinner-border spnr" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </span>
+                <strong class="me-auto">Successful</strong>
+                <small>Just Now!</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Please check your mail and follow the link!
+            </div>
+        </div>
+    </div>
+    <!--Toast notf end-->
+
+
+    <!--toast-script-->
+    <script>
+        // Select elements
+        const button = document.getElementById('kt_docs_toast_stack_button');
+        const container = document.getElementById('kt_docs_toast_stack_container');
+        const targetElement = document.querySelector('[data-kt-docs-toast="stack"]'); // Use CSS class or HTML attr to avoid duplicating ids
+
+        // Remove base element markup
+        targetElement.parentNode.removeChild(targetElement);
+
+        // Handle button click
+        button.addEventListener('click', e => {
+            e.preventDefault();
+
+            // Create new toast element
+            const newToast = targetElement.cloneNode(true);
+            container.append(newToast);
+
+            // Create new toast instance --- more info: https://getbootstrap.com/docs/5.1/components/toasts/#getorcreateinstance
+            const toast = bootstrap.Toast.getOrCreateInstance(newToast);
+
+            // Toggle toast to show --- more info: https://getbootstrap.com/docs/5.1/components/toasts/#show
+            toast.show();
+        });
+    </script>
+
 
 </body>
 

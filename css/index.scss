@@ -3,6 +3,8 @@
 @import "breakpoints.scss";
 @import "bubbles.scss";
 
+@import "forgot.scss";
+
 body {
     margin: 0px !important;
     padding: 0px !important;
@@ -44,8 +46,15 @@ body {
 
 .title {
 
-    font-size: 40pt;
+    font-size: 50pt;
     color: #3e662c;
+
+}
+
+.subtitle {
+
+    font-size: 25pt;
+    color: #446e30d0;
 
 }
 
@@ -67,24 +76,21 @@ a:hover {
 
 .animation {
 
-    translate: 0 100px;
+    position: relative;
+    z-index: 999;
     background-color: white;
     width: 300px;
     height: 300px;
 
     text-align: center;
     border-radius: 60%;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 20px $primary-color-soft;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 20px $secondary-color;
+
+    margin-top: 30%;
+    margin-left: 33%;
+
 }
 
-.box1 {
-    margin-top: 20%;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
 
 .loginbox {
     position: relative;
@@ -232,3 +238,12 @@ a:hover {
 
 }
 
+.spnr{
+    color: $primary-color;
+}
+
+.logo{
+
+    margin-top: 20%;
+    margin-left: 30%;
+}

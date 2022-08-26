@@ -1,3 +1,12 @@
+.bubblesfull{
+  position: absolute;
+  width:100%;
+  height: 100%;
+  overflow:hidden;
+  top:0;
+  left:0;
+  z-index: 99;
+}
 .bubbles{
     position: absolute;
     width:50%;
